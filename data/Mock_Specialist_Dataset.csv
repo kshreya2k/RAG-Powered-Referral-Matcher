@@ -1,0 +1,6 @@
+specialist_id,name,specialty,location,insurance_accepted,availability_next_3_days,profile_summary
+1,Dr. Aarti Mehta,Cardiologist,"New Haven, CT","BlueCross, Aetna",3,Board-certified cardiologist with 10 years of experience in treating arrhythmia and heart failure.
+2,Dr. James Wright,Pulmonologist,"Stamford, CT","Aetna, Cigna",0,Specialist in respiratory and lung disorders including COPD and asthma. 15+ years in pulmonary care.
+3,Dr. Leena Kapoor,Neurologist,"Hartford, CT","United, BlueCross",2,"Neurodiagnostics expert focusing on dizziness, migraines, and stroke recovery."
+4,Dr. Brian Choi,Internal Medicine,"Bridgeport, CT","Medicare, Aetna",5,General practitioner with a preventive care focus and chronic disease management experience.
+5,Dr. Sophia Martinez,Cardiologist,"Norwalk, CT","BlueCross, United",1,"Cardiologist specializing in exertional chest pain, athletic heart monitoring, and hypertension management."
