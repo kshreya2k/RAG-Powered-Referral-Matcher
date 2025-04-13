@@ -1,67 +1,35 @@
-# Specialist Search Agent (SSA) – Agentic RAG-Powered Referral Matcher
+# 🩺 WeKare360 Specialist Search Agent (SSA) – RAG Pipeline
 
-This repository presents a multi-version implementation of a **Specialist Search Agent (SSA)** for the WeKare360 One-Click Referral system. The system uses Retrieval-Augmented Generation (RAG) and modular AI agents to recommend the top 3 specialists based on patient symptoms, ranked by proximity, availability, and insurance compatibility. 
+This project explores a **multi-agent, Retrieval-Augmented Generation (RAG)-powered AI system** designed to intelligently match patients with medical specialists based on symptoms, location, insurance, and availability.
 
-Developed and tested in **Google Colab** for rapid prototyping and demonstration.
-
----
-
-## Author
-**Shreya Banik**
+Developed as part of a technical assignment for the **WeKare360 One-Click Referral System**, this system parses natural language patient queries and returns a ranked list of specialists with clear, explainable justifications.
 
 ---
 
-## Objective
+## 🚀 Features
 
-To design and implement an explainable referral matching system that:
-- Parses free-text patient input to identify key symptoms and intent
-- Matches the input to appropriate medical specialists
-- Ranks specialists using structured metadata
-- Outputs structured JSON responses with clear justifications
-- Enables integration with downstream agents (e.g., insurance authorization)
-
----
-
-## Models and Tools Used
-
-| Component                  | Details                                                                 |
-|---------------------------|-------------------------------------------------------------------------|
-| **LLM (for reasoning)**   | `GPT2` (via `transformers`) for generating summaries and reflections     |
-| **Sentence Embeddings**   | `all-MiniLM-L6-v2` from `sentence-transformers` for vector search        |
-| **Vector Store**          | `FAISS` (V2) and `Chroma` via `LlamaIndex` (V3) for fast similarity search|
-| **RAG Framework**         | `LlamaIndex` (formerly GPT Index) for index construction and querying    |
-| **Agentic Design**        | Custom Python agents (Referral, Supervisor, Insurance)                   |
-| **Notebook Platform**     | Google Colab                                                              |
-| **Metadata Format**       | Structured CSV for specialists' data (name, specialty, insurance, etc.)  |
+- **Natural Language Understanding** using zero-shot classification (`facebook/bart-large-mnli`)
+- **Semantic Search** over specialist profiles using vector embeddings (HuggingFace models)
+- **RAG Pipelines** with FAISS, LangChain, and LlamaIndex + Chroma
+- **Specialist Ranking** based on:
+  - Symptom-specialty alignment
+  - Insurance compatibility
+  - Geographic proximity
+  - Next-3-day availability
+- **Patient-Friendly Justifications** via Falcon-7B (`tiiuae/falcon-7b-instruct`)
+- **Multi-Agent Architecture**:  
+  Specialist Search Agent → Supervisor Agent → Insurance Agent
+- **Reflection Loop**: Auto re-query on low-confidence results
+- **API-ready Placeholder**: Simulated logic for real-time availability updates
 
 ---
 
-## Pipeline Versions
+## 📂 Project Structure
 
-### `SSA_V1.ipynb` – Rule-Based Matching
-- Keyword-based specialty detection
-- Ranking using metadata: availability, insurance, and proximity
-- No semantic or vector-based retrieval
-
-### `SSA_V2.ipynb` – Hybrid RAG with FAISS
-- Uses HuggingFace embeddings (`all-MiniLM-L6-v2`) and FAISS for semantic retrieval
-- Combines vector search with rule-based filtering
-- Includes confidence scoring and composite ranking logic
-
-### `SSA_V3.ipynb` – Agentic RAG with Multi-Agent Pipeline
-- Modular agent design:
-  - `ReferralMatcher`
-  - `SupervisorAgent`
-  - `InsuranceAgent`
-- Uses `LlamaIndex` + `Chroma` for semantic search over profile corpus
-- Reflection loop to re-query if relevance score is below 0.6
-- Structured JSON output with patient-friendly justifications
-
----
-
-## Directory Structure
-
-- `notebooks/` – 3 versions of the pipeline (V1–V3)
-- `agents/` – Modular agent implementations
-- `data/` – Mock specialist metadata
-- `output/` – Sample structured output
+```bash
+notebooks/
+├── Multiagent_RAG_pipeline_final.ipynb  # End-to-end pipeline
+data/
+├── Mock_Specialist_Dataset.csv          # Metadata for doctors
+doc/
+├── Shreya Banik-Interview with Sri.pdf         # Task document
