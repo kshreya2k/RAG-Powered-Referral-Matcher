@@ -1,4 +1,4 @@
-# 🩺 WeKare360 Specialist Search Agent (SSA) – RAG Pipeline
+# 🩺 Specialist Search Agent (SSA) – RAG Pipeline
 
 This project explores a **multi-agent, Retrieval-Augmented Generation (RAG)-powered AI system** designed to intelligently match patients with medical specialists based on symptoms, location, insurance, and availability.
 
