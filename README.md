@@ -2,7 +2,7 @@
 
 This project explores a **multi-agent, Retrieval-Augmented Generation (RAG)-powered AI system** designed to intelligently match patients with medical specialists based on symptoms, location, insurance, and availability.
 
-Developed as part of a technical assignment for the **WeKare360 One-Click Referral System**, this system parses natural language patient queries and returns a ranked list of specialists with clear, explainable justifications.
+Developed as part of a technical assignment for the **One-Click Referral System**, this system parses natural language patient queries and returns a ranked list of specialists with clear, explainable justifications.
 
 ---
 
